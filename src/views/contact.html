@@ -159,13 +159,13 @@
             </figure>
         </div>
         <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
-            <form name="contact" method="POST" data-netlify="true" class="contact-form form-validate" data-netlify-recaptcha="true">
+            <form name="contact" method="POST" class="contact-form form-validate" id="contact" data-netlify-recaptcha="true" data-netlify="true" >
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
                             <label class="required-field" for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" name="firstName"
-                                placeholder="Wendy" required>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Wendy"
+                                required>
                         </div>
                     </div>
 
@@ -176,7 +176,6 @@
                                 placeholder="Appleseed" required>
                         </div>
                     </div>
-
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
                             <label class="required-field" for="email">Email</label>
@@ -184,15 +183,12 @@
                                 placeholder="wendy.apple@seed.com" required>
                         </div>
                     </div>
-
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" name="phone"
-                                placeholder="(021)-454-545">
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="(021)-454-545">
                         </div>
                     </div>
-
                     <div class="col-sm-12 mb-3">
                         <div class="form-group">
                             <label class="required-field" for="message">How can we help?</label>
@@ -212,7 +208,15 @@
     </div>
 </div>
 <script>
-    async function onSubmit(event){
-        var x = document.getElementById("contact");
-    }
+    var loginForm = document.getElementById("contact");
+
+    console.log(loginForm);
+    loginForm.addEventListener("submit", (e) => {
+        if (loginForm) {
+            e.preventDefault();
+
+        }
+        // handle submit
+    });
+
 </script>
