@@ -159,7 +159,7 @@
             </figure>
         </div>
         <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
-            <form name="contact" method="POST" data-netlify="true" class="contact-form form-validate" onsubmit="return validate_form();"></form>>
+            <form name="contact" method="POST" data-netlify="true" class="contact-form form-validate" data-netlify-recaptcha="true">
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
@@ -168,7 +168,6 @@
                                 placeholder="Wendy" required>
                         </div>
                     </div>
-
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
@@ -211,3 +210,8 @@
         </div>
     </div>
 </div>
+<script>
+    async function onSubmit(event){
+        var x = document.getElementById("contact");
+    }
+</script>
