@@ -1,0 +1,59 @@
+
+.footer {
+  width: 100%;
+  background-color: white;
+  height: 65px;
+  padding-top: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    &__container{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &__logo {
+            &__link {
+              &__img {
+                max-width: 50px;
+                height: auto;
+                cursor: pointer;
+              }
+            }
+          }
+          &__navigationContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            gap: 2rem;
+            &__nav {
+              &__list {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                &__item {
+                  cursor: pointer;
+                }
+              }
+            }
+            &__socialMedia {
+              &__list {
+                display: flex;
+                align-items: end;
+                flex-direction: row;
+                gap: 1rem;
+                &__item {
+                  cursor: pointer;
+                  svg {
+                    max-width: 24px;
+                    max-height: 24px;
+                  }
+                }
+              }
+            }
+          }
+    }
+  
+}

@@ -5,8 +5,21 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Segoe UI Symbol";
 $font-family-serif: "Georgia", "Times New Roman", serif;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
 
+$blue-chess: #3B58DD;
+$blue-chess-light: color.scale($blue-chess, $lightness: 20%);
+$blue-chess-lightess: color.scale($blue-chess, $lightness: 60%);
 $mqMinWidth: 420px;
+$breakpoint-tablet: 768px;
+
+/*Bootstrap*/
+$theme-colors: (
+ "primary": #3B58DD
+
+ );
+ $carousel-dark-indicator-active-bg:  #3B58DD !default;
+ $carousel-dark-control-icon-filter:  #3B58DD;
+//$carousel-indicator-active-bg:       #3B58DD !default;
+//$carousel-transition-duration:       .6s;
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$blue-chess}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$blue-chess}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");

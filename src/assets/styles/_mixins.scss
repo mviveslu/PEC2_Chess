@@ -1,0 +1,59 @@
+/*
+Functions
+*/
+@mixin flex-direction($direction) {
+    display: flex;
+    flex-direction: $direction;
+  }
+  
+  @mixin flex-direction-alignText($direction, $aligment) {
+    text-align: $aligment;
+    @include flex-direction($direction);
+  }
+  @mixin flex-direction-alignItems($direction, $aligmentItems) {
+    align-items: $aligmentItems;
+    @include flex-direction($direction);
+  }
+  
+  @mixin flex-direction-justifycontent($direction, $justify) {
+    justify-content: $justify;
+    @include flex-direction($direction);
+  }
+  
+  @mixin flex-direction-alignText-justifycontent(
+    $direction,
+    $aligment,
+    $justify
+  ) {
+    text-align: $aligment;
+    justify-content: $justify;
+    @include flex-direction($direction);
+  }
+  
+  @mixin flex-direction-alignText-justifycontent-alignItems(
+    $direction,
+    $aligment,
+    $justify,
+    $aligmentItems
+  ) {
+    text-align: $aligment;
+    justify-content: $justify;
+    align-items: $aligmentItems;
+    @include flex-direction($direction);
+  }
+  
+  @mixin flex-direction-justifycontent-alignItems(
+    $direction,
+    $justify,
+    $aligmentItems
+  ) {
+    justify-content: $justify;
+    align-items: $aligmentItems;
+    @include flex-direction($direction);
+  }
+  @mixin setHeightWidth($height, $width) {
+    height: $height;
+    width: $width;
+  }
+  
+  

@@ -9,7 +9,7 @@
 /**
  * Write any other JavaScript below
  */
-
+import * as bootstrap from 'bootstrap'
 +( function() {
   const university = "UOC";
   console.log(`Hello, ${university}!`);

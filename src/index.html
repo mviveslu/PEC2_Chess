@@ -1,27 +1,84 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+  <!-- do not remove this line! -->
+  <title>UOC Boilerplate</title>
+</head>
+
+<body>
+  <include src="./views/header.html"></include>
+  <main class="main">
+    <div class="main__container">
+      <section class="main__container__section main__container__section--first">
+        <div class="main__container__section__poster" id="poster">
+          <div class="main__container__section__poster__imgDate">
+            <img class="main__container__section__poster__imgDate__img" id="poster-image" src="./assets/images/chess3.jpg"
+              alt="competition photo" />
+            <span class="main__container__section__poster__imgDate__date" id="poster-date"> 25 NOV 2023</span>
+          </div>
+          <div class="main__container__section__poster__dateEvent">
+            <p>20-25 NOVEMBER 2025</p>
+          </div>
+          <div class="main__container__section__poster__mainCompetitonInformation">
+            <h2 class="main__container__section__poster__mainCompetitonInformation__subtitle">JOIN THE</h2>
+            <h1 class="main__container__section__poster__mainCompetitonInformation__title">COMPETITION</h1>
+          </div>
+          <div class="main__container__section__poster__description">
+            <h3 class="main__container__section__poster__description__title">Amateur competition</h3>
+            <p class="main__container__section__poster__description__paragraph">
+              Aperiam, natus voluptas porro reiciendis
+              neque quidem. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit.
+            </p>
+            <h3 class="main__container__section__poster__description__title">Low prizes</h3>
+            <p class="main__container__section__poster__description__paragraph">
+              Lorem, ipsum dolor sit amet consectetur adipisicing
+              elit. Laboriosam dolorem aspernatur itaque, placeat, cum
+              delectus adipisci velit officiis expedita odit facere
+              rerum maiores.
+            </p>
+            <h4 class="main__container__section__poster__description__subtitle">JOIN NOW</h4>
+            <span class="main__container__section__poster__description__contact">
+              +123-456-789
+            </span>
+            <span class="main__container__section__poster__description__contact">
+              example@gmail.com
+            </span>
+          </div>
+        </div>
+      </section>
     </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+
+
+
+
+  </main>
+  <include src="./views/footer.html"></include>
+  <script type="module" src="./assets/scripts/main.js"></script>
+  <script type="module">
+
+    const poster = document.getElementById("poster");
+    const posterImage = document.getElementById("poster-image");
+    const posterDate = document.getElementById("poster-date");
+    /*Hover*/
+    poster.addEventListener("mouseover", func, false);
+    function func(){
+      posterImage.style.opacity = "0.2";
+      posterDate.style.display ="inline";
+    }
+    /*Hover out*/
+    poster.addEventListener("mouseout", func1, false);
+    function func1(){
+      posterImage.style.opacity = "1";
+      posterDate.style.display ="none";
+    }
+  </script>
+  <!-- do not remove this line! -->
+</body>
+
 </html>

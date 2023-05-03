@@ -1,0 +1,38 @@
+<header class="header">
+<div class="header__container">
+  <div class="header__container__image">
+    <a class="header__container__image__link">
+      <img src="./assets/images/logo_chess_club.png" alt="web page logo" class="header__container__image__link__image" />
+    </a>
+  </div>
+  <div class="header__container__hamburger__menu" onclick="toggleMenu()">
+    <div class="header__container__hamburger__menu__bar1"></div>
+    <div class="header__container__hamburger__menu__bar2"></div>
+    <div class="header__container__hamburger__menu__bar3"></div>
+  </div>
+  <nav class="header__container__navbar">
+    <ul class="header__container__navbar__list">
+      <li class="header__container__navbar__list__item"><a href="./second.html">Team Members</a></li>
+      <li class="header__container__navbar__list__item"><a href="./third.html">Club</a></li>
+      <li class="header__container__navbar__list__item"><a href="./fourth.html">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+    
+  </header>
+  <script type="text/javascript" src="./assets/scripts/classList.bem.js"></script>
+  <script>
+    let menuOpen = false;
+  function toggleMenu() {
+    const menu = document.querySelector('.header__container__hamburger__menu');
+    const nav = document.querySelector('.header__container__navbar')
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      menu.classList.addModifier('change');
+      nav.classList.addModifier('show')
+    } else {
+      menu.classList.removeModifier('change');
+      nav.classList.removeModifier('show')
+    }
+  }
+  </script>
