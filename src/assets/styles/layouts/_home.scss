@@ -4,104 +4,205 @@
   margin: 0;
   font-family: $font-family-sans-serif;
   list-style: none;
+  text-decoration: none;
 }
 
 /*Limpio*/
-.main__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: calc(100vh - 65px);
-  &__section {
-    &--first {
-      padding-top: 100px;
-    }
-    &--header{
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-    }
-    &__poster {
-      margin-top: 2rem;
-      padding: 2rem;
-      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-      cursor: pointer;
-      display: grid;
-      max-width: 1200px;
-      grid-template-columns: 1.3fr 0.7fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: repeat(3, 22vh);
+.main {
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    //min-height: calc(100vh - 65px);
+    &__section {
+      margin-left:2rem;
+      &--first {
+        padding-top: 90px;
+      }
 
-      &__imgDate {
-        grid-column: 1 /4;
-        grid-row: 1/4;
-        position: relative;
-        &__img {
-          width: 100%;
-          height: 100%;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-          clip-path: circle(50%);
-          border-radius: 5px;
+
+      @supports (display: grid) {
+        &__poster {
+          padding: 2rem;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          cursor: pointer;
+          max-width: 1200px;
+          grid-template-columns: 1.3fr 0.7fr 1fr 1fr 1fr 1fr;
+          grid-template-rows: repeat(3, 22vh);
+          display: grid;
+
+          &__imgDate {
+            grid-column: 1 /4;
+            grid-row: 1/4;
+            position: relative;
+            &__img {
+              width: 100%;
+              height: 100%;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              clip-path: circle(50%);
+              border-radius: 5px;
+            }
+            &__date {
+              position: absolute;
+              display: none;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-weight: 900;
+              font-size: x-large;
+            }
+          }
+          &__dateEvent {
+            grid-column: 2/4;
+            grid-row: 1/2;
+            position: relative;
+            p {
+              display: none;
+              background-color: $blue-chess-light;
+              position: absolute;
+              top: 40px;
+              right: 20px;
+              width: 100%;
+              margin: 0;
+              padding: 15px;
+              font-size: 1.2rem;
+              border-radius: 5px;
+              color: white;
+              font-weight: 600;
+              text-align: right;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+          }
+          &__mainCompetitonInformation {
+            grid-column: 4/7;
+            grid-row: 1/2;
+            padding: 20px;
+            &__title {
+              text-align: right;
+            }
+            &__subtitle {
+              text-align: right;
+              font-weight: 900;
+              color: grey;
+            }
+          }
+          &__description {
+            padding: 0 1rem 0 1.5rem;
+            grid-column: 4/7;
+            grid-row: 2/4;
+            margin-top:2rem;
+            &__title {
+              text-align: right;
+              font-weight: 600;
+            }
+            &__paragraph {
+              text-align: right;
+            }
+            &__subtitle {
+              text-align: right;
+            }
+            &__contact {
+              text-align: right;
+              display: block;
+            }
+          }
+          &__contact{
+            grid-column: 4/7;
+            grid-row: 4/5;
+            text-align: right;
+            &__subtitle{
+              display: block;
+            }
+            &__telephone{
+              display: block;
+            }
+          }
         }
-        &__date {
-          position: absolute;
-          display: none;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-weight: 900;
-          font-size: x-large;
-        }
+      
+      
       }
-      &__dateEvent {
-        grid-column: 2/4;
-        grid-row: 1/2;
-        position: relative;
-        p {
-          display: none;
-          background-color: $blue-chess-light;
-          position: absolute;
-          top: 40px;
-          right: 20px;
-          width: 100%;
-          margin: 0;
-          padding: 15px;
-          font-size: 1.2rem;
-          border-radius: 5px;
-          color: white;
-          font-weight: 600;
-          text-align: right;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        }
-      }
-      &__mainCompetitonInformation {
-        grid-column: 4/7;
-        grid-row: 1/2;
-        padding: 20px;
-        &__title {
-          text-align: right;
-        }
-        &__subtitle {
-          text-align: right;
-          font-weight: 900;
-          color: grey;
-        }
-      }
-      &__description {
-        padding: 0 1rem 0 1.5rem;
-        grid-column: 4/7;
-        grid-row: 2/5;
-        &__title {
-          text-align: right;
-          font-weight: 600;
-        }
-        &__paragraph {
-          text-align: right;
-        }
-        &__subtitle {
-          text-align: right;
-        }
-        &__contact {
-          text-align: right;
-          display: block;
+      @supports not (display: grid) {
+        &__poster {
+          display: flex;
+          padding: 2rem;
+          flex-wrap: wrap;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          cursor: pointer;
+          max-width: 1200px;
+          &__imgDate {
+            position: relative;
+            flex-basis: 50%;
+            flex-shrink: 0;
+            order: 1;
+            transform: translateY(-100px);
+            &__img {
+              width: 100%;
+              height: 100%;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              clip-path: circle(50%);
+              border-radius: 5px;
+            }
+            &__date {
+              position: absolute;
+              display: none;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-weight: 900;
+              font-size: x-large;
+            }
+          }
+          &__dateEvent {
+            
+            position: relative;
+            p {
+              display: none;
+              background-color: $blue-chess-light;
+              position: absolute;
+              top: 40px;
+              right: 20px;
+              width: 100%;
+              margin: 0;
+              padding: 15px;
+              font-size: 1.2rem;
+              border-radius: 5px;
+              color: white;
+              font-weight: 600;
+              text-align: right;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+          }
+          &__mainCompetitonInformation {
+            flex-basis: 100%;
+            order:0;
+            padding: 20px;
+            &__title {
+              text-align: right;
+            }
+            &__subtitle {
+              text-align: right;
+              font-weight: 900;
+              color: grey;
+            }
+          }
+          &__description {
+            padding: 0 1rem 0 1.5rem;
+            flex-basis: 50%;
+            order:1;
+            &__title {
+              text-align: right;
+              font-weight: 600;
+            }
+            &__paragraph {
+              text-align: right;
+            }
+            &__subtitle {
+              text-align: right;
+            }
+            &__contact {
+              text-align: right;
+              display: block;
+            }
+          }
         }
       }
     }
@@ -115,7 +216,6 @@ h1 {
   text-align: center;
   color: $blue-chess;
   font-family: $font-family-sans-serif;
-
   @media (max-width: $breakpoint-tablet) {
     font-size: 2rem;
   }
@@ -138,61 +238,76 @@ h3 {
   }
 }
 
-.cards-section {
-  padding-top: calc(60px + 4rem);
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: white;
-  margin-top: 2rem;
-}
-.cards {
-  display: flex;
+@media( max-width: $breakpoint-tablet ){
+  .main__container__section__poster {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
 
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: stretch;
-  gap: 1rem;
-  padding: 0;
-}
-.card__item {
-  flex: 0 1 calc(33.33% - 1rem);
-  @media (max-width: $mqMinWidth) {
-    flex: 0 1 100%;
+  .main__container__section__poster__imgDate{
+    grid-column: 1/4;
+    grid-row: 1/1;
   }
-  @media (min-width: $mqMinWidth) and (max-width: $breakpoint-tablet) {
-    flex: 0 1 calc(50% - 1rem);
+  .main__container__section__poster__dateEvent {
+    grid-column: 1/1;
+    grid-row: 2/2;
   }
-}
-.card {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  height: 100%;
-  /*border-radius: 0.5rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  */
-  border: none;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  .card-img-top img {
-    filter: contrast(70%);
-    padding: 1rem;
-    border-radius: 25px;
-    width: 100%;
+  .main__container__section__poster__mainCompetitonInformation{
+    grid-column: 1/1;
+    grid-row: 2/3;
   }
-  //flex: 0 1 calc(25% - 1em);
-  &:hover {
-    .card-img-top img {
-      filter: contrast(100%);
-    }
+  .main__container__section__poster__description{
+    padding: 20px;
+    grid-column: 3/3;
+    grid-row: 2/4;
+    margin-top:0;
   }
-  .card-body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .main__container__section__poster__contact{
+    grid-column: 1/1;
+    grid-row: 3/4;
   }
 }
 
-/*body {
+@media( max-width: calc($mqMinWidth + 200px) ){
+  .main__container__section__poster {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto;
+  }
+
+  .main__container__section__poster__imgDate{
+    grid-column: 1/1;
+    grid-row: 1/1;
+  }
+  .main__container__section__poster__dateEvent {
+    grid-column: 1/1;
+    grid-row: 2/2;
+  }
+  .main__container__section__poster__mainCompetitonInformation{
+    grid-column: 1/1;
+    grid-row: 3/3;
+  }
+  .main__container__section__poster__description{
+    grid-column: 1/1;
+    grid-row: 4/4;
+    margin-top:0;
+  }
+  .main__container__section__poster__contact{
+    grid-column: 1/1;
+    grid-row: 5/5;
+  }
+}
+
+
+
+
+/*
+
+    
+
+
+
+
+body {
   display: flex;
   flex-direction: column;
   height: 100vh;

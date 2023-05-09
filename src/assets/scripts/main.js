@@ -10,7 +10,36 @@
  * Write any other JavaScript below
  */
 import * as bootstrap from 'bootstrap'
+import "@fortawesome/fontawesome-free/css/all.css";
+
+
+
 +( function() {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
+  const url = window.location.href;
+  const href = url.substring(url.lastIndexOf('/') + 1);
+  const membersLink = document.getElementById("membersLink");
+  const articleLink = document.getElementById("articleLink");
+  const contactLink = document.getElementById("contactLink");
+  if(href === "teamPage.html"){
+    membersLink.classList.add("active");
+    articleLink.classList.remove("active");
+    contactLink.classList.remove("active");
+  }
+  else if(href ==="contactPage.html"){
+    membersLink.classList.remove("active");
+    articleLink.classList.remove("active");
+    contactLink.classList.add("active");
+  }
+  else if(href ==="third.html"){
+    membersLink.classList.remove("active");
+    articleLink.classList.add("active");
+    contactLink.classList.remove("active");
+  }
+  else{
+    articleLink.classList.remove("active");
+    contactLink.classList.remove("active");
+    membersLink.classList.remove("active");
+  }
 } )();
+
+
