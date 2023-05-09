@@ -39,6 +39,9 @@ svg {
   background-color: #fff;
   border-radius: 0 0 0.625rem 0.625rem;
 }
+.mb-5 {
+  color:white;
+}
 
 @media (min-width: 1024px) {
   .contact__wrapper {
@@ -52,5 +55,5 @@ svg {
 }
 .shadow-lg,
 .shadow-lg--on-hover:hover {
-  box-shadow: 0 1rem 3rem rgba(132, 138, 163, 0.1) !important;
+  box-shadow: 0 1rem 3rem rgba(132 138 163 / 10%) !important;
 }
