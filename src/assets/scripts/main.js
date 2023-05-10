@@ -21,12 +21,12 @@ import "@fortawesome/fontawesome-free/css/all.css";
   const articleLink = document.getElementById("articleLink");
   const contactLink = document.getElementById("contactLink");
   console.log(href);
-  if(href === "teamPage.html" || href ==="teamPage"){
+  if(href === "teamPage.html" || href ==="teampage"){
     membersLink.classList.add("active");
     articleLink.classList.remove("active");
     contactLink.classList.remove("active");
   }
-  else if(href ==="contactPage.html" || href ==="contactPage"){
+  else if(href ==="contactPage.html" || href ==="contactpage"){
     membersLink.classList.remove("active");
     articleLink.classList.remove("active");
     contactLink.classList.add("active");
