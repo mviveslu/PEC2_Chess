@@ -25,8 +25,8 @@ Functions
     $aligment,
     $justify
   ) {
-    text-align: $aligment;
     justify-content: $justify;
+    text-align: $aligment;
     @include flex-direction($direction);
   }
   
@@ -36,9 +36,9 @@ Functions
     $justify,
     $aligmentItems
   ) {
-    text-align: $aligment;
-    justify-content: $justify;
     align-items: $aligmentItems;
+    justify-content: $justify;
+    text-align: $aligment;
     @include flex-direction($direction);
   }
   
@@ -47,13 +47,13 @@ Functions
     $justify,
     $aligmentItems
   ) {
-    justify-content: $justify;
     align-items: $aligmentItems;
+    justify-content: $justify;
     @include flex-direction($direction);
   }
   @mixin setHeightWidth($height, $width) {
-    height: $height;
     width: $width;
+    height: $height;
   }
   
   

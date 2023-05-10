@@ -20,17 +20,17 @@ import "@fortawesome/fontawesome-free/css/all.css";
   const membersLink = document.getElementById("membersLink");
   const articleLink = document.getElementById("articleLink");
   const contactLink = document.getElementById("contactLink");
-  if(href === "teamPage.html"){
+  if(href === "teamPage.html" || href ==="teamPage"){
     membersLink.classList.add("active");
     articleLink.classList.remove("active");
     contactLink.classList.remove("active");
   }
-  else if(href ==="contactPage.html"){
+  else if(href ==="contactPage.html" || href ==="contactPage"){
     membersLink.classList.remove("active");
     articleLink.classList.remove("active");
     contactLink.classList.add("active");
   }
-  else if(href ==="third.html"){
+  else if(href ==="third.html" || href ==="third"){
     membersLink.classList.remove("active");
     articleLink.classList.add("active");
     contactLink.classList.remove("active");

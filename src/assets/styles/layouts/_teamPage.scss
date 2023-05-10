@@ -1,42 +1,55 @@
-.cards-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: white;
-  padding-top:90px;
-  margin-top:2rem;
-}
-.cards {
-  margin-left: 1rem;  
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: stretch;
-  gap: 1rem;
-  padding: 0;
-  margin-top:2rem;
-}
-.card__item {
-  flex: 0 1 calc(33.33% - 1rem);
-  @media (max-width: $mqMinWidth) {
-    flex: 0 1 100%;
-    margin-right:1rem;
+
+.main{
+  &__container{
+    &__section{
+      &--cards-section{
+        max-width: 1200px;
+        padding-top: 90px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        background-color: white;
+      }
+      &__list{
+        &--cards{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          align-items: stretch;
+          justify-content: left;
+          padding: 0;
+          margin-top: 2rem;
+          margin-left: 1rem;
+        }
+        &__item{
+          &--card-item{
+            flex: 0 1 calc(33.33% - 1rem);
+            @media (max-width: $mqMinWidth) {
+              flex: 0 1 100%;
+              margin-right: 1rem;
+            }
+            @media (min-width: $mqMinWidth) and (max-width: $breakpoint-tablet) {
+              flex: 0 1 calc(50% - 1rem);
+            }
+          }
+        }
+      }
+    }
   }
-  @media (min-width: $mqMinWidth) and (max-width: $breakpoint-tablet) {
-    flex: 0 1 calc(50% - 1rem);
-  }
 }
+
+
 .card {
-  box-shadow: rgba(100 100 111 / 20%) 0px 7px 29px 0px;
-  height: 100%;
-  border: none;
   display: flex;
   flex-direction: column;
+  height: 100%;
   overflow: hidden;
+  border: none;
+  box-shadow: rgba(100 100 111 / 20%) 0px 7px 29px 0px;
   .card-img-top img {
-    filter: contrast(70%);
-    padding: 1rem;
-    border-radius: 25px;
     width: 100%;
+    padding: 1rem;
+    filter: contrast(70%);
+    border-radius: 25px;
   }
   &:hover {
     .card-img-top img {
@@ -45,7 +58,7 @@
   }
   .card-body {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
   }
 }
