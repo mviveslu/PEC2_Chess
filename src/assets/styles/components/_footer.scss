@@ -5,3 +5,12 @@ a{
   width: auto;
   height: 2rem;
 }
+.main{
+  &__container{
+    &__section{
+      &--footer{
+        margin-right:2rem;
+      }
+    }
+  }
+}

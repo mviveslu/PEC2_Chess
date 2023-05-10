@@ -12,8 +12,7 @@ $list1: $blue-chess, $blue-chess-light, $blue-chess-lightess;
 }
 
 svg {
-  width: 24px;
-  height: 24px;
+  @include setHeightWidth(24px, 24px);
 }
 .contact-info__wrapper {
   overflow: hidden;

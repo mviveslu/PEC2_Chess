@@ -21,7 +21,7 @@
         margin-top: 2rem;
         margin-right: 2rem;
       }
-      @supports (display: grid) {
+      @supports (display: grido) {
         &__poster {
           @media (max-width: $breakpoint-tablet) {
             grid-template-rows: auto auto;
@@ -35,13 +35,9 @@
           grid-template-rows: repeat(3, 22vh);
           grid-template-columns: 1.3fr 0.7fr 1fr 1fr 1fr 1fr;
           max-width: 1200px;
-
           padding: 2rem;
-
           cursor: pointer;
-
           box-shadow: rgba(17 12 46 / 15%) 0px 48px 100px 0px;
-
           &__imgDate {
             @media (max-width: $breakpoint-tablet) {
               grid-row: 1/1;
@@ -67,9 +63,12 @@
               top: 50%;
               left: 50%;
               display: none;
-              font-size: x-large;
+              font-size: 1.8rem;
               font-weight: 900;
               transform: translate(-50%, -50%);
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1.4rem;
+              }
             }
           }
           &__dateEvent {
@@ -116,12 +115,20 @@
 
             padding: 20px;
             &__title {
+              font-size: 3.1rem;
               text-align: right;
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 2rem;
+              }
             }
             &__subtitle {
+              font-size: 2.5rem;
               font-weight: 900;
               color: grey;
               text-align: right;
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1.4rem;
+              }
             }
           }
           &__description {
@@ -142,18 +149,20 @@
 
             margin-top: 2rem;
             &__title {
+              font-size: 2rem;
               font-weight: 600;
               text-align: right;
+
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1.3rem;
+              }
             }
             &__paragraph {
+              font-size: 1.3rem;
               text-align: right;
-            }
-            &__subtitle {
-              text-align: right;
-            }
-            &__contact {
-              display: block;
-              text-align: right;
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1rem;
+              }
             }
           }
           &__contact {
@@ -167,36 +176,61 @@
             }
             grid-row: 4/5;
             grid-column: 4/7;
+            margin-top: 4rem;
             text-align: right;
             &__subtitle {
               display: block;
+              font-size: 1.8rem;
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1.3rem;
+              }
             }
             &__telephone {
               display: block;
+              font-size: 1.3rem;
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1rem;
+              }
+            }
+            &__email {
+              display: block;
+              font-size: 1.3rem;
+              @media (max-width: calc($breakpoint-tablet + 100px)) {
+                font-size: 1rem;
+              }
             }
           }
         }
       }
-      @supports not (display: grid) {
+      @supports not (display: grido) {
         &__poster {
           display: flex;
           flex-wrap: wrap;
+          justify-content: flex-end;
           max-width: 1200px;
           padding: 2rem;
           cursor: pointer;
-          box-shadow: rgba(17 12 46 / 15%) 0px 48px 100px 0px;
+          box-shadow: 0 48px 100px #110c2e26;
           &__imgDate {
             position: relative;
-            flex-basis: 50%;
+            flex-basis: 49%;
             flex-shrink: 0;
-            order: 1;
-            transform: translateY(-100px);
+            order: 0;
+            transform: translatey(50px);
+
+
+
+            @media (max-width: calc($breakpoint-tablet + 120px)) {
+              flex-basis: 100%;
+            }
+
             &__img {
               width: 100%;
               height: 100%;
               clip-path: circle(50%);
               border-radius: 5px;
               box-shadow: rgba(100 100 111 / 20%) 0px 7px 29px 0px;
+              
             }
             &__date {
               position: absolute;
@@ -228,9 +262,21 @@
             }
           }
           &__mainCompetitonInformation {
-            flex-basis: 100%;
+            display: flex;
+            flex-basis:51%;
+            flex-direction: column;
+
+            justify-content: center;
+
             order: 0;
             padding: 20px;
+
+
+            @media (max-width: calc($breakpoint-tablet + 120px)) {
+              flex-basis:100%;
+              margin-top:2rem;
+            }
+            
             &__title {
               text-align: right;
             }
@@ -242,8 +288,11 @@
           }
           &__description {
             flex-basis: 50%;
-            order: 1;
+            order: 0;
             padding: 0 1rem 0 1.5rem;
+            @media (max-width: calc($breakpoint-tablet + 120px)) {
+              flex-basis:100%;
+            }
 
             &__title {
               font-weight: 600;
@@ -259,6 +308,22 @@
               display: block;
               text-align: right;
             }
+          }
+          &__contact {
+            display: flex;
+            flex-basis: 100%;
+            flex-direction: column;
+            align-content: flex-end;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            order: 2;
+
+
+
+
+
+            padding: 0 1rem 0 1.5rem;
           }
         }
       }
