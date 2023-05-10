@@ -20,6 +20,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
   const membersLink = document.getElementById("membersLink");
   const articleLink = document.getElementById("articleLink");
   const contactLink = document.getElementById("contactLink");
+  console.log(href);
   if(href === "teamPage.html" || href ==="teamPage"){
     membersLink.classList.add("active");
     articleLink.classList.remove("active");
